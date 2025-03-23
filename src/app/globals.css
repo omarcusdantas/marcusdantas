@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary-01: hsl(215, 100%, 77%);
+  --color-primary-02: hsl(215, 100%, 40%);
+  --color-primary-03: hsl(215, 100%, 19%);
+  --color-secondary-01: hsl(46, 100%, 81%);
+  --color-secondary-02: hsl(46, 100%, 61%);
+  --color-secondary-03: hsl(46, 100%, 24%);
+  --color-tertiary-01: hsl(0, 0%, 96%);
+  --color-tertiary-02: hsl(0, 0%, 74%);
+  --color-tertiary-03: hsl(0, 0%, 18%);
+
+  --font-lato: var(--font-import-lato);
+  --font-noto: var(--font-import-noto);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  h1 {
+    @apply text-6xl font-bold font-lato;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  h2 {
+    @apply text-5xl font-bold font-lato;
+  }
+
+  h3 {
+    @apply text-4xl font-medium font-lato;
+  }
+
+  h4 {
+    @apply text-3xl font-medium font-lato;
+  }
+
+  h5 {
+    @apply text-2xl font-medium font-lato;
+  }
+
+  h6 {
+    @apply text-xl font-medium font-lato;
+  }
 }
