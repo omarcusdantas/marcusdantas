@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary-01: hsl(215, 100%, 77%);
   --color-primary-02: hsl(215, 100%, 40%);
@@ -17,26 +19,26 @@
 
 @layer base {
   h1 {
-    @apply text-6xl font-bold font-lato;
+    @apply font-lato text-6xl font-bold;
   }
 
   h2 {
-    @apply text-5xl font-bold font-lato;
+    @apply font-lato text-5xl font-bold;
   }
 
   h3 {
-    @apply text-4xl font-medium font-lato;
+    @apply font-lato text-4xl font-medium;
   }
 
   h4 {
-    @apply text-3xl font-medium font-lato;
+    @apply font-lato text-3xl font-medium;
   }
 
   h5 {
-    @apply text-2xl font-medium font-lato;
+    @apply font-lato text-2xl font-medium;
   }
 
   h6 {
-    @apply text-xl font-medium font-lato;
+    @apply font-lato text-xl font-medium;
   }
 }

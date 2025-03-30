@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Lato, Noto_Sans } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import { Header } from "@/components/Header";
 import "./globals.css";
 
 const lato = Lato({
@@ -27,8 +29,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lato.variable} ${notoSans.variable} font-noto`}>
-      <body>{children}</body>
+    <html lang="en" className={`${lato.variable} ${notoSans.variable} font-noto`} suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class">
+          <Header />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
