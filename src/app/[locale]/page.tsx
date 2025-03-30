@@ -1,11 +1,19 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
 
-export default function Home() {
+interface Props {
+  readonly params: Promise<{ locale: string }>;
+}
+
+export default function Home({ params }: Props) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations("HomePage");
 
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
         <h2>{t("title")}</h2>
         <Image className="dark:invert" src="/next.svg" alt="Next.js logo" width={180} height={38} priority />

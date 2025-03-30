@@ -41,4 +41,8 @@
   h6 {
     @apply font-lato text-xl font-medium;
   }
+
+  button {
+    @apply cursor-pointer;
+  }
 }
