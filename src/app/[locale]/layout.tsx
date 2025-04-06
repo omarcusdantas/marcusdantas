@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { Lato, Noto_Sans } from "next/font/google";
-import { ThemeProvider } from "next-themes";
-import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { routing } from "@/i18n/routing";
+import { IntlProvider } from "@/shared/contexts/IntlContext";
+import { ThemeProvider } from "@/shared/contexts/ThemeContext";
+import { checkLocale } from "@/shared/hooks/useIntl";
 import { Header } from "@/shared/components/Header";
 import "./globals.css";
 
@@ -33,19 +32,17 @@ interface Props {
 
 export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
+  checkLocale(locale);
 
   return (
     <html lang={locale} className={`${lato.variable} ${notoSans.variable} font-noto`} suppressHydrationWarning>
       <body>
-        <NextIntlClientProvider>
-          <ThemeProvider attribute="class">
+        <IntlProvider>
+          <ThemeProvider>
             <Header />
             <main>{children}</main>
           </ThemeProvider>
-        </NextIntlClientProvider>
+        </IntlProvider>
       </body>
     </html>
   );

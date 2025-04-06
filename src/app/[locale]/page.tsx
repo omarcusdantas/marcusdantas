@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
+import { useTranslations } from "@/shared/hooks/useIntl";
 
 interface Props {
   readonly params: Promise<{ locale: string }>;
@@ -9,8 +8,7 @@ interface Props {
 
 export default function Home({ params }: Props) {
   const { locale } = use(params);
-  setRequestLocale(locale);
-  const t = useTranslations("HomePage");
+  const t = useTranslations(locale, "HomePage");
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
