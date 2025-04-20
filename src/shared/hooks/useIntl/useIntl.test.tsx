@@ -1,4 +1,4 @@
-import { beforeEach, describe, it, expect, vi } from "vitest";
+import { afterEach, describe, it, expect, vi } from "vitest";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { checkLocale } from "@/shared/hooks/useIntl";
@@ -12,7 +12,7 @@ vi.mock("next-intl", () => ({
   hasLocale: vi.fn(),
 }));
 
-beforeEach(() => {
+afterEach(() => {
   vi.resetAllMocks();
 });
 

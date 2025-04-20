@@ -30,6 +30,7 @@ export function Navbar() {
                 {isActive && (
                   <motion.div
                     layoutId="nav-underline"
+                    data-testid={`navbar-underline-${item.name.toLowerCase()}`}
                     className="bg-primary-02 dark:bg-secondary-02 absolute -bottom-2 left-1/2 h-0.5 w-[80%] -translate-x-1/2 rounded-t-md"
                     transition={{
                       type: "spring",
