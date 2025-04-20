@@ -3,9 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary-01: hsl(215, 100%, 77%);
-  --color-primary-02: hsl(215, 100%, 40%);
-  --color-primary-03: hsl(215, 100%, 19%);
+  --color-primary-01: hsl(215, 95%, 77%);
+  --color-primary-02: hsl(215, 95%, 40%);
+  --color-primary-03: hsl(215, 90%, 15%);
   --color-secondary-01: hsl(46, 100%, 81%);
   --color-secondary-02: hsl(46, 100%, 61%);
   --color-secondary-03: hsl(46, 100%, 24%);

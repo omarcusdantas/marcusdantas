@@ -3,7 +3,7 @@ import { Lato, Noto_Sans } from "next/font/google";
 import { IntlProvider } from "@/shared/contexts/IntlContext";
 import { ThemeProvider } from "@/shared/contexts/ThemeContext";
 import { checkLocale } from "@/shared/hooks/useIntl";
-import { Header } from "@/shared/components/Header";
+import { Header } from "@/modules/layout/components/Header";
 import "./globals.css";
 
 const lato = Lato({
@@ -36,11 +36,11 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} className={`${lato.variable} ${notoSans.variable} font-noto`} suppressHydrationWarning>
-      <body>
+      <body className="bg-tertiary-01 dark:bg-primary-03">
         <IntlProvider>
           <ThemeProvider>
             <Header />
-            <main>{children}</main>
+            <main className="flex flex-col items-center justify-center py-20">{children}</main>
           </ThemeProvider>
         </IntlProvider>
       </body>

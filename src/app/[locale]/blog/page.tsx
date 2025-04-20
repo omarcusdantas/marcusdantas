@@ -5,9 +5,9 @@ interface Props {
   readonly params: Promise<{ locale: string }>;
 }
 
-export default function Home({ params }: Props) {
+export default function Blog({ params }: Props) {
   const { locale } = use(params);
   const t = useTranslations(locale, "HomePage");
 
-  return <h2>{t("title")}</h2>;
+  return <h2>{t("title") + " - Blog"}</h2>;
 }
