@@ -3,7 +3,7 @@ import { describe, it, expect, vi, afterEach } from "vitest";
 import { Navbar } from ".";
 import { usePathname } from "next/navigation";
 
-const navItems = [
+const mockNavItems = [
   { name: "Home", path: "/" },
   { name: "Blog", path: "/blog" },
 ];
@@ -23,10 +23,10 @@ describe("Navbar", () => {
     vi.mocked(usePathname).mockReturnValueOnce("/");
 
     // Act
-    render(<Navbar navItems={navItems} />);
+    render(<Navbar navItems={mockNavItems} />);
 
     // Assert
-    navItems.forEach((item) => {
+    mockNavItems.forEach((item) => {
       expect(screen.getByRole("link", { name: item.name })).toBeInTheDocument();
     });
   });
@@ -36,7 +36,7 @@ describe("Navbar", () => {
     vi.mocked(usePathname).mockReturnValue("/blog");
 
     // Act
-    render(<Navbar navItems={navItems} />);
+    render(<Navbar navItems={mockNavItems} />);
 
     // Assert
     const blogUnderline = screen.getByTestId("navbar-underline-blog");
@@ -48,7 +48,7 @@ describe("Navbar", () => {
     vi.mocked(usePathname).mockReturnValue("/blog");
 
     // Act
-    render(<Navbar navItems={navItems} />);
+    render(<Navbar navItems={mockNavItems} />);
 
     // Assert
     const homeUnderline = screen.queryByTestId("navbar-underline-home");
