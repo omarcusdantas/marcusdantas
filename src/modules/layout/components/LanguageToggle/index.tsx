@@ -20,5 +20,9 @@ export function LanguageToggle() {
     router.replace(newUrl);
   };
 
-  return <button onClick={toggleLocale}>{locale.toUpperCase()}</button>;
+  return (
+    <button className="text-md" onClick={toggleLocale}>
+      {locale.toUpperCase()}
+    </button>
+  );
 }

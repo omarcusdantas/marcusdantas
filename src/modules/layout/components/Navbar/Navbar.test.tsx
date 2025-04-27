@@ -23,7 +23,7 @@ describe("Navbar", () => {
     vi.mocked(usePathname).mockReturnValueOnce("/");
 
     // Act
-    render(<Navbar />);
+    render(<Navbar navItems={navItems} />);
 
     // Assert
     navItems.forEach((item) => {
@@ -36,7 +36,7 @@ describe("Navbar", () => {
     vi.mocked(usePathname).mockReturnValue("/blog");
 
     // Act
-    render(<Navbar />);
+    render(<Navbar navItems={navItems} />);
 
     // Assert
     const blogUnderline = screen.getByTestId("navbar-underline-blog");
@@ -48,7 +48,7 @@ describe("Navbar", () => {
     vi.mocked(usePathname).mockReturnValue("/blog");
 
     // Act
-    render(<Navbar />);
+    render(<Navbar navItems={navItems} />);
 
     // Assert
     const homeUnderline = screen.queryByTestId("navbar-underline-home");

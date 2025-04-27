@@ -40,7 +40,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
         <IntlProvider>
           <ThemeProvider>
             <Header />
-            <main className="flex flex-col items-center justify-center py-20">{children}</main>
+            <main className="flex flex-col items-center justify-center pt-25">{children}</main>
           </ThemeProvider>
         </IntlProvider>
       </body>

@@ -4,12 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 
-const navItems = [
-  { name: "Home", path: "/" },
-  { name: "Blog", path: "/blog" },
-];
+interface NavbarProps {
+  readonly navItems: { name: string; path: string }[];
+}
 
-export function Navbar() {
+export function Navbar({ navItems }: NavbarProps) {
   const pathname = usePathname();
 
   return (
@@ -19,7 +18,7 @@ export function Navbar() {
           const isActive = pathname === item.path;
 
           return (
-            <li key={item.path} className="relative px-3 py-2 text-sm">
+            <li key={item.path} className="text-md relative px-3 py-2">
               <div className="relative mx-auto w-fit">
                 <Link
                   href={item.path}
