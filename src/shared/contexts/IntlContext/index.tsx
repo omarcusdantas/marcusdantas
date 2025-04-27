@@ -1,9 +1,9 @@
 import { NextIntlClientProvider } from "next-intl";
 
-interface Props {
+interface IntlProviderProps {
   readonly children: React.ReactNode;
 }
 
-export function IntlProvider({ children }: Props) {
+export function IntlProvider({ children }: IntlProviderProps) {
   return <NextIntlClientProvider>{children}</NextIntlClientProvider>;
 }

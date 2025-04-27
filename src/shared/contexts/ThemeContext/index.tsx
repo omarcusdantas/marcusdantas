@@ -1,9 +1,9 @@
 import { ThemeProvider as ThemeProviderExternal } from "next-themes";
 
-interface Props {
+interface ThemeProviderProps {
   readonly children: React.ReactNode;
 }
 
-export function ThemeProvider({ children }: Props) {
+export function ThemeProvider({ children }: ThemeProviderProps) {
   return <ThemeProviderExternal attribute="class">{children}</ThemeProviderExternal>;
 }

@@ -1,11 +1,11 @@
 import { use } from "react";
 import { useTranslations } from "@/shared/hooks/useIntl";
 
-interface Props {
+interface HomeProps {
   readonly params: Promise<{ locale: string }>;
 }
 
-export default function Home({ params }: Props) {
+export default function Home({ params }: HomeProps) {
   const { locale } = use(params);
   const t = useTranslations(locale, "HomePage");
 
