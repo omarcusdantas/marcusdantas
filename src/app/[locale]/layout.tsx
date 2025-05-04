@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Lato, Noto_Sans } from "next/font/google";
 import { IntlProvider } from "@/shared/contexts/IntlContext";
 import { ThemeProvider } from "@/shared/contexts/ThemeContext";
-import { checkLocale } from "@/shared/hooks/useIntl";
+import { checkLocale, getLocales } from "@/shared/utils/intl";
 import { Header } from "@/modules/layout/components/Header";
 import "./globals.css";
 
@@ -47,3 +47,9 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
     </html>
   );
 }
+
+export function generateStaticParams() {
+  return getLocales();
+}
+
+export const dynamicParams = false;

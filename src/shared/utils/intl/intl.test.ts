@@ -1,7 +1,7 @@
 import { afterEach, describe, it, expect, vi } from "vitest";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
-import { checkLocale } from "@/shared/hooks/useIntl";
+import { checkLocale } from "@/shared/utils/intl";
 import { routing } from "@/i18n/routing";
 
 vi.mock("next/navigation", () => ({
