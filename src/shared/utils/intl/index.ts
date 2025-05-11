@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
-import { setRequestLocale, getTranslations as getTranslationsExternal } from "next-intl/server";
+import { getTranslations as getTranslationsExternal, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
 export function checkLocale(locale: string) {

@@ -1,6 +1,6 @@
-import { render, screen, fireEvent, cleanup, waitForElementToBeRemoved } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitForElementToBeRemoved } from "@testing-library/react";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { MobileMenu } from "@/modules/layout/components/MobileMenu";
-import { describe, it, expect, vi, afterEach } from "vitest";
 
 const mockNavItems = [
   { name: "Home", path: "/" },

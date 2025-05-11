@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import { Lato, Noto_Sans } from "next/font/google";
+import { Header } from "@/modules/layout/components/Header";
 import { IntlProvider } from "@/shared/contexts/IntlContext";
 import { ThemeProvider } from "@/shared/contexts/ThemeContext";
 import { checkLocale, getLocales } from "@/shared/utils/intl";
-import { Header } from "@/modules/layout/components/Header";
+import type { Metadata } from "next";
 import "./globals.css";
 
 const lato = Lato({

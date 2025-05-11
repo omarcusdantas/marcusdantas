@@ -1,8 +1,8 @@
-import { afterEach, describe, it, expect, vi } from "vitest";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
-import { checkLocale } from "@/shared/utils/intl";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { routing } from "@/i18n/routing";
+import { checkLocale } from "@/shared/utils/intl";
 
 vi.mock("next/navigation", () => ({
   notFound: vi.fn(),

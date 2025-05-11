@@ -1,8 +1,8 @@
-import { ThemeToggle } from "@/modules/layout/components/ThemeToggle";
-import { LanguageToggle } from "@/modules/layout/components/LanguageToggle";
-import { Navbar } from "@/modules/layout/components/Navbar";
-import { MobileMenu } from "@/modules/layout/components/MobileMenu";
 import { Suspense } from "react";
+import { LanguageToggle } from "@/modules/layout/components/LanguageToggle";
+import { MobileMenu } from "@/modules/layout/components/MobileMenu";
+import { Navbar } from "@/modules/layout/components/Navbar";
+import { ThemeToggle } from "@/modules/layout/components/ThemeToggle";
 
 const navItems = [
   { name: "Home", path: "/" },

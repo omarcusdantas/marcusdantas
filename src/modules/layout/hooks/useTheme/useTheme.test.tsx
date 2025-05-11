@@ -1,7 +1,7 @@
-import { renderHook, act } from "@testing-library/react";
-import { useTheme } from "@/modules/layout/hooks/useTheme"; // adjust the import path
+import { act, renderHook } from "@testing-library/react";
 import { useTheme as useThemeExternal } from "next-themes";
-import { describe, it, expect, vi, afterEach } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { useTheme } from "@/modules/layout/hooks/useTheme"; // adjust the import path
 
 vi.mock("next-themes", () => ({
   useTheme: vi.fn(),

@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 interface MobileMenuProps {
   readonly navItems: { name: string; path: string }[];

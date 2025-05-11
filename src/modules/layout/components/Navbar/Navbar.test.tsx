@@ -1,7 +1,7 @@
-import { render, screen, cleanup } from "@testing-library/react";
-import { describe, it, expect, vi, afterEach } from "vitest";
-import { Navbar } from ".";
 import { usePathname } from "next/navigation";
+import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { Navbar } from ".";
 
 const mockNavItems = [
   { name: "Home", path: "/" },
