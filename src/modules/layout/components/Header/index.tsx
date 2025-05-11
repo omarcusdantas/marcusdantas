@@ -2,6 +2,7 @@ import { ThemeToggle } from "@/modules/layout/components/ThemeToggle";
 import { LanguageToggle } from "@/modules/layout/components/LanguageToggle";
 import { Navbar } from "@/modules/layout/components/Navbar";
 import { MobileMenu } from "@/modules/layout/components/MobileMenu";
+import { Suspense } from "react";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -19,7 +20,9 @@ export function Header() {
         <div className="flex items-center gap-4 rounded-full px-2 py-2">
           <ThemeToggle />
           <div className="bg-tertiary-02 dark:bg-primary-01 h-6 w-[2px]"></div>
-          <LanguageToggle />
+          <Suspense fallback={null}>
+            <LanguageToggle />
+          </Suspense>
           <div className="contents sm:hidden">
             <div className="bg-tertiary-02 dark:bg-primary-01 h-6 w-[2px]"></div>
             <MobileMenu navItems={navItems} />
